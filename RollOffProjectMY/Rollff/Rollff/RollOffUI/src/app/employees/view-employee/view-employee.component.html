@@ -1,0 +1,62 @@
+<div class="">
+    <div class="container">
+      <h1 style="margin-top: 10px;color: white">Employee Details</h1>
+    </div>
+
+</div>
+
+<div class="container">
+    <div class="card mat-elevation-z8">
+        
+        <div class="col-md-12">
+            
+           <table class="table table-striped">
+            
+            <tbody>
+              <tr>
+                <td>Globle Group ID : {{employee.globalGroupID}}</td>
+                <td>Employee No : {{employee.employeeNo}}</td>
+              </tr>
+              <tr>
+                <td>Name : {{employee.name}}</td>
+                <td>Glocal Grade : {{employee.localGrade}}</td>
+              </tr>
+              <tr>
+                <td>Main Client : {{employee.mainClient}}</td>
+                <td>Email ID : {{employee.mainClient}}</td>
+              </tr>
+              <tr>
+                <td>joining Date : {{employee.joiningDate}}</td>
+                <td>Project Code : {{employee.projectCode}}</td>
+              </tr>
+              <tr>
+                <td>Project Name : {{employee.projectName}}</td>
+                <td>Project Start Date : {{employee.projectStartDate}}</td>
+              </tr>
+              <tr>
+                <td>Project End Date : {{employee.projectEndDate}}</td>
+                <td>People Manager : {{employee.peopleManager}}</td>
+              </tr>
+                <tr>
+                <td>Practice : {{employee.practice}}</td>
+                <td>Psp Name : {{employee.pspName}}</td>
+              </tr>
+                <tr>
+                <td>New Global Practice : {{employee.newGlobalPractice}}</td>
+                <td>Office City : {{employee.officeCity}}</td>
+              </tr>
+                <tr>
+                <td>Country : {{employee.country}}</td>
+                <td>-</td>
+              </tr>
+              
+            </tbody>
+          </table>
+
+          <a [routerLink]="['/app-rolloff', employeeId]" class="btn btn-primary btn-lg">Roll OFF</a>
+
+          <a routerLink="/app-employees" class="btn btn-primary btn-lg" style="margin-left: 10px">Back</a>
+
+        </div>
+
+    </div>

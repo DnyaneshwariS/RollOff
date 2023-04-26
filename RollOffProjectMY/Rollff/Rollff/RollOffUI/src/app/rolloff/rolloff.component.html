@@ -1,0 +1,151 @@
+<form class="border p-3 rounded-3 login-container" [formGroup]="rollOffForm" (ngSubmit)="onSubmit()">
+  <div class="row g-0">
+    <h1 for="name" class="form-label" style="color: white">Roll-OFF & Feedback !</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-3 mb-3">  
+      <label for="name" class="form-label" >Name</label>
+      <input type="text" class="form-control" value="{{employee.name}}" disabled />
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="name" class="form-label">Practice</label>
+      <input type="text" class="form-control" value="{{employee.practice}}" disabled/>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="name" class="form-label">Performance Issue</label>
+      <select class="form-control dropdown-arrow" formControlName="performanceIssue">
+        <option [ngValue]="true">No</option>
+        <option [ngValue]="false">Yes</option>
+      </select>
+      <div class="form-text text-danger" *ngIf="rollOffForm.controls.performanceIssue.errors?.['required'] && (rollOffForm.controls.performanceIssue.touched || rollOffForm.controls.performanceIssue.dirty)">
+        Please select Performance Issue
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="name" class="form-label">Technical Skills</label>
+      <input type="text" class="form-control" formControlName="technicalSkill"/>
+      <div class="form-text text-danger" *ngIf="rollOffForm.controls.technicalSkill.errors?.['required'] && (rollOffForm.controls.technicalSkill.touched || rollOffForm.controls.technicalSkill.dirty)">
+        Technical Skills is required
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 mb-3">
+      <label for="name" class="form-label">Local Grade</label>
+      <input type="text" class="form-control" value="{{employee.localGrade}}" disabled/>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="name" class="form-label">Roll Off End Date</label>
+      <input type="date" class="form-control" formControlName="endDate"/>
+      <div class="form-text text-danger" *ngIf="rollOffForm.controls.endDate.errors?.['required'] && (rollOffForm.controls.endDate.touched || rollOffForm.controls.endDate.dirty)">
+        Please select Roll Off End Date
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="name" class="form-label">Resgined</label>
+      <select class="form-control dropdown-arrow" formControlName="resgined">
+        <option [ngValue]="true" default>No</option>
+        <option [ngValue]="false">Yes</option>
+      </select>
+      <div class="form-text text-danger" *ngIf="rollOffForm.controls.resgined.errors?.['required'] && (rollOffForm.controls.resgined.touched || rollOffForm.controls.resgined.dirty)">
+        Please select Resgined
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="name" class="form-label">Communication</label>
+      <input type="text" class="form-control" formControlName="communication"/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 mb-3">
+      <label for="name" class="form-label">Primary Skill</label>
+      <input type="text" class="form-control" formControlName="primarySkill"/>
+      <div class="form-text text-danger" *ngIf="rollOffForm.controls.primarySkill.errors?.['required'] && (rollOffForm.controls.primarySkill.touched || rollOffForm.controls.primarySkill.dirty)">
+        Please select Primary Skill
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="name" class="form-label">Reason for Roll Off</label>
+      <select class="form-control dropdown-arrow" formControlName="reason">
+        <option value="Project Clouser" default>Project Clouser</option>
+        <option value="Bench">Bench</option>
+        <option value="NewJob">New Job</option>
+      </select>
+      <div class="form-text text-danger" *ngIf="rollOffForm.controls.reason.errors?.['required'] && (rollOffForm.controls.reason.touched || rollOffForm.controls.reason.dirty)">
+        Please select Reason for Roll Off
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="name" class="form-label">Under Probation</label>
+      <select class="form-control dropdown-arrow" formControlName="underProbation">
+        <option [ngValue]="true" default>No</option>
+        <option [ngValue]="false">Yes</option>
+      </select>
+      <div class="form-text text-danger" *ngIf="rollOffForm.controls.underProbation.errors?.['required'] && (rollOffForm.controls.underProbation.touched || rollOffForm.controls.underProbation.dirty)">
+        Please select Under Probation
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="name" class="form-label">Role Competencies</label>
+      <input type="text" class="form-control" formControlName="roleCompetencies"/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 mb-3">
+      <label for="name" class="form-label">Project code</label>
+      <input type="text" class="form-control" value="{{employee.projectCode}}" disabled/>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="name" class="form-label">Other Reason</label>
+      <input type="text" class="form-control" formControlName="otherReason"/>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="name" class="form-label">Long leave</label>
+      <select class="form-control dropdown-arrow" formControlName="longLeave">
+        <option [ngValue]="true" default>No</option>
+        <option [ngValue]="false">Yes</option>
+      </select>
+      <div class="form-text text-danger" *ngIf="rollOffForm.controls.longLeave.errors?.['required'] && (rollOffForm.controls.longLeave.touched || rollOffForm.controls.longLeave.dirty)">
+        Please select Long leave
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="name" class="form-label">Remarks</label>
+      <input type="text" class="form-control" formControlName="remarks"/>
+      <div class="form-text text-danger" *ngIf="rollOffForm.controls.remarks.errors?.['required'] && (rollOffForm.controls.remarks.touched || rollOffForm.controls.remarks.dirty)">
+        Remark is required
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 mb-3">
+      <label for="name" class="form-label">Project Name</label>
+      <input type="text" class="form-control" value="{{employee.projectName}}" disabled/>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="name" class="form-label">Leave Type</label>
+      <select class="form-control dropdown-arrow" formControlName="leaveType">
+        <option value="Paid Leave" default>Paid Leave</option>
+        <option value="Unpaid Leave">Unpaid Leave</option>
+        <option value="Sick Leave">Sick Leave</option>
+      </select>
+      <div class="form-text text-danger" *ngIf="rollOffForm.controls.leaveType.errors?.['required'] && (rollOffForm.controls.leaveType.touched || rollOffForm.controls.leaveType.dirty)">
+        Please select Leave Type
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="name" class="form-label">Relevent Experience in Yrs</label>
+      <input type="number" class="form-control" min="0" formControlName="relevantExperience"/>
+      <div class="form-text text-danger" *ngIf="rollOffForm.controls.relevantExperience.errors?.['required'] && (rollOffForm.controls.relevantExperience.touched || rollOffForm.controls.relevantExperience.dirty)">
+        Relevent Experience is required
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3 offset-4">
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary" style="padding: 10px;font-size: 13px;font-weight: bolder" [disabled]="!rollOffForm.valid">Submit</button>
+      </div>
+    </div>
+  </div>
+</form>

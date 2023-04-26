@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+    <div class="col-md-12 col-xs-12">
+        <a routerLink="#" mat-fab class="mat-button-base" style="color: white; background-color: deepskyblue">
+            <mat-icon>home</mat-icon>
+        </a>
+        <a *ngIf="adminBased() && isUserAuthenticated()" routerLink="app-employees" mat-button mat-raised-button class="m1-1">Employees</a>
+        <a *ngIf="accountBased() && isUserAuthenticated()" routerLink="app-account" mat-button mat-raised-button class="m1-1">Employees</a>
+        <a *ngIf="superBased() && isUserAuthenticated()" routerLink="app-super" mat-button mat-raised-button class="m1-1">Employees</a>
+        <a  routerLink="app-register" mat-button mat-raised-button class="m1-1">Register</a>
+        <a *ngIf="!isUserAuthenticated()" routerLink="app-login" mat-button mat-raised-button class="m1-1">Login</a>
+        <a *ngIf="isUserAuthenticated()" (click)="logOut()" mat-button mat-raised-button class="m1-1 logout">Logout</a>
+        <!-- <a routerLink="app-temp" mat-button color="primary" mat-raised-button class="m1-1">Temp</a> -->
+    </div>
+</mat-toolbar>
